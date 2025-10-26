@@ -1,185 +1,55 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MULTI POWER BUILDERS PTE. LTD. - Home</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        primary: {
-                            light: '#f87171',
-                            DEFAULT: '#ef4444',
-                            dark: '#b91c1c',
-                            darkest: '#7f1d1d',
-                        },
-                        secondary: {
-                            light: '#f3f4f6',
-                            DEFAULT: '#d1d5db',
-                            dark: '#374151',
-                            darkest: '#111827',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        .hero-pattern {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px), linear-gradient(to right, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
-            background-size: 20px 20px;
-        }
-        /* Custom styles for the modal and spinner */
-        .modal-backdrop {
-            transition: opacity 0.3s ease;
-        }
-        .modal-content {
-            transition: transform 0.3s ease;
-        }
-        .loader {
-            border-top-color: #ef4444; /* primary.DEFAULT */
-            -webkit-animation: spin 1s linear infinite;
-            animation: spin 1s linear infinite;
-        }
-        @-webkit-keyframes spin {
-            0% { -webkit-transform: rotate(0deg); }
-            100% { -webkit-transform: rotate(360deg); }
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
+    <title>Carousel Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="font-sans antialiased text-gray-800">
+<body>
 
-    <!-- Header -->
-    <header class="bg-white shadow-md p-6 flex justify-between items-center sticky top-0 z-50">
-        <h1 class="text-xl md:text-2xl font-bold text-red-500">MULTI POWER BUILDERS PTE. LTD.</h1>
-        <nav class="hidden md:flex items-center space-x-6">
-            <a href="#" class="text-gray-700 hover:text-red-500 transition duration-300">Home</a>
-            <a href="#about" class="text-gray-700 hover:text-red-500 transition duration-300">About Us</a>
-            <a href="#services" class="text-gray-700 hover:text-red-500 transition duration-300">Services</a>
-            <a href="#projects" class="text-gray-700 hover:text-red-500 transition duration-300">Projects</a>
-            <a href="#contact" class="text-gray-700 hover:text-red-500 transition duration-300">Contact</a>
-            <a href="#contact" class="bg-red-500 text-white font-semibold px-5 py-2 rounded-full shadow-md hover:bg-red-600 transition duration-300">Get a Quote</a>
-        </nav>
-        <button id="menu-btn" class="md:hidden text-gray-700 hover:text-red-500 focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-        </button>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="relative overflow-hidden bg-gradient-to-r from-red-700 to-red-900 text-white text-center py-32 md:py-40 px-6">
-        <div class="absolute inset-0 bg-black opacity-50"></div> <!-- Background overlay -->
-        <div class="relative z-10">
-            <h2 class="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight drop-shadow-lg">Welcome To MULTI POWER BUILDERS PTE. LTD.</h2>
-            <p class="max-w-3xl mx-auto text-lg md:text-xl mb-10 text-red-100">A Small Medium Enterprise (SME) registered with the Building and Construction Authority (BCA) in Singapore.</p>
-            <a href="#services" class="bg-white text-red-700 font-semibold px-10 py-4 rounded-full shadow-lg hover:bg-red-50 transition duration-300">Discover Our Services</a>
-        </div>
-    </section>
-
-    <!-- About Us Section -->
-    <section id="about" class="py-24 px-8 bg-white">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div>
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="Multi Power Builders Team" class="rounded-lg shadow-xl w-full h-auto object-cover" onerror="this.src='https://placehold.co/600x400/ef4444/white?text=Our+Team&font=inter'">
-            </div>
-            <div class="text-left">
-                <h3 class="text-4xl font-bold mb-6 text-gray-800">Our Core Offerings</h3>
-                <p class="text-gray-700 text-lg leading-relaxed mb-6">MULTI POWER BUILDERS PTE. LTD. is a Small Medium Enterprise (SME) registered with the Building and Construction Authority (BCA) in Singapore.</p>
-                <p class="text-gray-700 text-lg leading-relaxed mb-4">We are committed to delivering high-quality, reliable, and efficient solutions tailored to our clients' needs. Our core business includes:</p>
-                <ul class="text-gray-700 text-base leading-relaxed mb-8 list-disc ml-4 space-y-1">
-                    <li>Interior Office & Laboratory Fit Out Works</li>
-                    <li>Design and Build Electrical</li>
-                    <li>Design and Build Plumbing and Sanitary for Laboratory</li>
-                    <li>Design and Build LTA Sky Camera Outdoor IP PTZ with Solar Power System</li>
-                    <li>Design and Build for ELV (Extra-Low Voltage)</li>
-                    <li>FOA – Fiber Optic Technician</li>
-                    <li>Specialist Construction Registration (CW01, ME05, ME01, ME012)</li>
-                </ul>
-                <a href="#contact" class="bg-red-500 text-white font-semibold px-8 py-3 rounded-full shadow-md hover:bg-red-600 transition duration-300">Get a Quote</a>
+<!-- Hero Section as Carousel -->
+<section id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <!-- First Slide (Placeholder Content) -->
+        <div class="carousel-item active" style="background-color: #ef4444; color: white;">
+            <div class="container text-center py-32">
+                <h2 class="display-4 fw-bold">Welcome To MULTI POWER BUILDERS PTE. LTD.</h2>
+                <p class="lead">A Small Medium Enterprise (SME) registered with the Building and Construction Authority (BCA) in Singapore.</p>
+                <a href="#services" class="btn btn-light btn-lg mt-4">Discover Our Services</a>
             </div>
         </div>
-    </section>
+        <!-- Second Slide (Placeholder Content) -->
+        <div class="carousel-item" style="background-color: #f87171; color: white;">
+            <div class="container text-center py-32">
+                <h2 class="display-4 fw-bold">Building Your Future with Excellence</h2>
+                <p class="lead">Our core services include electrical and plumbing design, installation, and fit-out work.</p>
+                <a href="#about" class="btn btn-light btn-lg mt-4">Learn More</a>
+            </div>
+        </div>
+        <!-- Third Slide (Placeholder Content) -->
+        <div class="carousel-item" style="background-color: #b91c1c; color: white;">
+            <div class="container text-center py-32">
+                <h2 class="display-4 fw-bold">Reliable and High-Quality Construction Services</h2>
+                <p class="lead">We specialize in design and build services for laboratories, offices, and more.</p>
+                <a href="#projects" class="btn btn-light btn-lg mt-4">See Our Projects</a>
+            </div>
+        </div>
+    </div>
 
-    <!-- Services Section -->
-    <section id="services" class="py-24 px-8 bg-gray-100">
-        <h3 class="text-4xl font-bold text-center mb-16 text-gray-800">Our Services</h3>
-        <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-            <!-- Service Card 1 -->
-            <div class="bg-white rounded-lg p-8 shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105 flex flex-col">
-                <img src="https://images.unsplash.com/photo-1573496773905-f5b17e711f47?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=250&q=80" alt="Office Fit Out" class="rounded-md shadow-sm mb-6 w-full h-48 object-cover" onerror="this.src='https://placehold.co/400x250/fca5a5/7f1d1d?text=Office+Fit+Out&font=inter'">
-                <h4 class="text-2xl font-semibold text-red-700 mb-4">Interior Office & Laboratory Fit Out Works</h4>
-                <p class="text-gray-600 text-sm mb-4 flex-grow">End-to-end design, construction, and outfitting for modern offices and specialized laboratories.</p>
-                <ul class="mt-2 mb-2 text-gray-700 text-xs list-disc ml-4 space-y-1">
-                    <li>Space planning & design</li>
-                    <li>Furniture, fixtures, and equipment integration</li>
-                    <li>Cleanroom construction (lab-specific)</li>
-                </ul>
-            </div>
-            <!-- Service Card 2 -->
-            <div class="bg-white rounded-lg p-8 shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105 flex flex-col">
-                <img src="https://images.unsplash.com/photo-1664574653716-a826b0a0f443?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=250&q=80" alt="Electrical Work" class="rounded-md shadow-sm mb-6 w-full h-48 object-cover" onerror="this.src='https://placehold.co/400x250/fca5a5/7f1d1d?text=Electrical+Work&font=inter'">
-                <h4 class="text-2xl font-semibold text-red-700 mb-4">Design and Build Electrical & ELV</h4>
-                <p class="text-gray-600 text-sm mb-4 flex-grow">Comprehensive electrical installation services and full-service solutions for ELV systems (security, communication, automation).</p>
-                <ul class="mt-2 mb-2 text-gray-700 text-xs list-disc ml-4 space-y-1">
-                    <li>Mains and standby power distribution</li>
-                    <li>ELV systems (CCTV, PA, data, access control)</li>
-                    <li>Smart building solutions</li>
-                </ul>
-            </div>
-            <!-- Service Card 3 -->
-            <div class="bg-white rounded-lg p-8 shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105 flex flex-col">
-                <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=250&q=80" alt="Lab Plumbing" class="rounded-md shadow-sm mb-6 w-full h-48 object-cover" onerror="this.src='https://placehold.co/400x250/fca5a5/7f1d1d?text=Lab+Plumbing&font=inter'">
-                <h4 class="text-2xl font-semibold text-red-700 mb-4">Design and Build Plumbing and Sanitary for Laboratory</h4>
-                <p class="text-gray-600 text-sm mb-4 flex-grow">Expert plumbing and sanitary solutions for demanding laboratory environments, meeting stringent quality and safety standards.</p>
-                <ul class="mt-2 mb-2 text-gray-700 text-xs list-disc ml-4 space-y-1">
-                    <li>Lab-specific water, gas, and vacuum lines</li>
-                    <li>Biohazard and chemical handling arrangements</li>
-                    <li>Compliance assurance & maintenance</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+    <!-- Carousel Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</section>
 
-    <!-- Footer -->
-    <footer class="bg-red-900 text-red-200 py-10 px-6">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 text-center md:text-left">
-            <div>
-                <p class="text-lg font-semibold mb-4 text-white">MULTI POWER BUILDERS PTE. LTD.</p>
-                <p class="mb-2">45 Jalan Pemimpin<br>#10-03 Foo Wah Industrial Building<br>SINGAPORE 577197</p>
-                <p class="mb-2"><strong>Tel:</strong> +65 9859 0679 / +65 64911336</p>
-                <p class="mb-2"><strong>Email:</strong> raymond@multipowersg.com</p>
-            </div>
-            <div>
-                <h5 class="text-lg font-semibold mb-4 text-white">Quick Links</h5>
-                <nav class="flex flex-col space-y-2">
-                    <a href="#" class="hover:text-white transition duration-300">Home</a>
-                    <a href="#about" class="hover:text-white transition duration-300">About Us</a>
-                    <a href="#services" class="hover:text-white transition duration-300">Services</a>
-                    <a href="#projects" class="hover:text-white transition duration-300">Projects</a>
-                    <a href="#contact" class="hover:text-white transition duration-300">Contact</a>
-                </nav>
-            </div>
-            <div>
-                <h5 class="text-lg font-semibold mb-4 text-white">Our Commitment</h5>
-                <p>Delivering excellence and reliability in every project, ensuring client satisfaction through quality workmanship and timely completion.</p>
-            </div>
-        </div>
-        <div class="text-center text-sm text-red-300 mt-10 pt-6 border-t border-red-800">
-            © 2025 MULTI POWER BUILDERS PTE. LTD. All rights reserved.
-        </div>
-    </footer>
+<!-- Optional JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
