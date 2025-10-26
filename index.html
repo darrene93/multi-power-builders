@@ -56,6 +56,87 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
+        /* Basic Bootstrap Carousel styles to make it work without full CSS */
+        .carousel {
+            position: relative;
+        }
+        .carousel-inner {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        .carousel-item {
+            position: relative;
+            display: none;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            width: 100%;
+            transition: -webkit-transform .6s ease;
+            transition: transform .6s ease;
+            transition: transform .6s ease,-webkit-transform .6s ease;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-perspective: 1000px;
+            perspective: 1000px;
+        }
+        .carousel-item.active {
+            display: block;
+        }
+        .carousel-control-prev,
+        .carousel-control-next {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            z-index: 1;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            width: 15%;
+            color: #fff;
+            text-align: center;
+            opacity: .5;
+            transition: opacity .15s ease;
+        }
+        .carousel-control-prev {
+            left: 0;
+        }
+        .carousel-control-next {
+            right: 0;
+        }
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            background-repeat: no-repeat;
+            background-position: 50%;
+            background-size: 100% 100%;
+        }
+        .carousel-control-prev-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 16 16'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+        }
+        .carousel-control-next-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 16 16'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        }
+        .visually-hidden {
+            position: absolute!important;
+            width: 1px!important;
+            height: 1px!important;
+            padding: 0!important;
+            margin: -1px!important;
+            overflow: hidden!important;
+            clip: rect(0,0,0,0)!important;
+            white-space: nowrap!important;
+            border: 0!important;
+        }
     </style>
 </head>
 <body class="font-sans antialiased text-gray-800">
@@ -78,13 +159,30 @@
         </button>
     </header>
 
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobile-menu" class="md:hidden bg-white shadow-lg fixed top-0 left-0 w-full h-full z-40 pt-24 transform -translate-x-full transition-transform duration-300 ease-in-out">
+        <button id="close-menu-btn" class="absolute top-7 right-6 text-gray-700 hover:text-red-500 focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        <nav class="flex flex-col items-center justify-center h-full space-y-8 text-xl">
+            <a href="#" class="mobile-nav-link text-gray-700 hover:text-red-500 transition duration-300">Home</a>
+            <a href="#about" class="mobile-nav-link text-gray-700 hover:text-red-500 transition duration-300">About Us</a>
+            <a href="#services" class="mobile-nav-link text-gray-700 hover:text-red-500 transition duration-300">Services</a>
+            <a href="#projects" class="mobile-nav-link text-gray-700 hover:text-red-500 transition duration-300">Projects</a>
+            <a href="#contact" class="mobile-nav-link text-gray-700 hover:text-red-500 transition duration-300">Contact</a>
+            <a href="#contact" class="mobile-nav-link bg-red-500 text-white font-semibold px-6 py-3 rounded-full shadow-md hover:bg-red-600 transition duration-300">Get a Quote</a>
+        </nav>
+    </div>
+
     <!-- Hero Section as Carousel -->
-    <section id="heroCarousel" class="carousel slide relative text-white text-center py-32 md:py-40 px-6" data-bs-ride="carousel">
+    <section id="heroCarousel" class="carousel slide relative" data-bs-ride="carousel">
         <div class="carousel-inner">
             <!-- First Slide -->
             <div class="carousel-item active" style="background-color: #ef4444; color: white;">
                 <div class="absolute inset-0 hero-pattern opacity-30"></div>
-                <div class="relative z-10">
+                <div class="relative z-10 text-center py-32 md:py-40 px-6">
                     <h2 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight drop-shadow-lg">Welcome To MULTI POWER BUILDERS PTE. LTD.</h2>
                     <p class="max-w-3xl mx-auto text-lg md:text-xl mb-10 text-red-100">A Small Medium Enterprise (SME) registered with the Building and Construction Authority (BCA) in Singapore.</p>
                     <a href="#services" class="bg-white text-red-700 font-semibold px-10 py-4 rounded-full shadow-lg hover:bg-red-50 transition duration-300">Discover Our Services</a>
@@ -93,7 +191,7 @@
             <!-- Second Slide -->
             <div class="carousel-item" style="background-color: #f87171; color: white;">
                 <div class="absolute inset-0 hero-pattern opacity-30"></div>
-                <div class="relative z-10">
+                <div class="relative z-10 text-center py-32 md:py-40 px-6">
                     <h2 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight drop-shadow-lg">Your Partner in Reliable Construction</h2>
                     <p class="max-w-3xl mx-auto text-lg md:text-xl mb-10 text-red-100">We specialize in electrical, plumbing, and office fit-out works with a commitment to quality and safety.</p>
                     <a href="#about" class="bg-white text-red-700 font-semibold px-10 py-4 rounded-full shadow-lg hover:bg-red-50 transition duration-300">Learn More</a>
@@ -102,7 +200,7 @@
             <!-- Third Slide -->
             <div class="carousel-item" style="background-color: #b91c1c; color: white;">
                 <div class="absolute inset-0 hero-pattern opacity-30"></div>
-                <div class="relative z-10">
+                <div class="relative z-10 text-center py-32 md:py-40 px-6">
                     <h2 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight drop-shadow-lg">Building Your Future with Excellence</h2>
                     <p class="max-w-3xl mx-auto text-lg md:text-xl mb-10 text-red-100">Providing high-quality construction and engineering services, ensuring your project is built to last.</p>
                     <a href="#projects" class="bg-white text-red-700 font-semibold px-10 py-4 rounded-full shadow-lg hover:bg-red-50 transition duration-300">See Our Projects</a>
@@ -131,61 +229,76 @@
                 <div class="p-6">
                     <h4 class="text-2xl font-semibold text-red-700 mb-3">LTA Sky Camera (Solar)</h4>
                     <p class="text-gray-600 text-sm"><strong>Client:</strong> Land Transport Authority (LTA)<br><strong>Scope:</strong> Design and build outdoor IP PTZ camera surveillance systems with solar power integration for road and traffic monitoring.<br><strong>Status:</strong> Delivered</p>
-                    <p class="text-gray-600 text-sm">MULTI POWER BUILDERS designed and implemented a sustainable solution for **LTA**, utilizing **solar-powered IP PTZ cameras** for traffic and road monitoring in high-exposure zones. Our team handled the entire **design, installation**, and **solar integration** for off-grid, environmentally-conscious solutions.</p>
-                    <a href="#lta-sky-camera" class="text-red-500 hover:underline text-sm mt-2">Learn More About This Project</a>
+                    <p class="text-gray-600 text-sm mt-2"><strong>Details:</strong> CCTV surveillance implemented in high-exposure zones; solution emphasizes renewable energy and remote accessibility.</p>
+                    <a href="#lta-sky-camera" class="text-red-500 hover:underline text-sm mt-4 inline-block">Learn More About This Project</a>
                 </div>
             </div>
-            <!-- Additional project cards can go here -->
+            
+            <!-- Project Card 2 (Placeholder) -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <img src="https://placehold.co/400x300/ef4444/ffffff?text=Office+Fit-Out&font=inter" alt="Office Fit-Out" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h4 class="text-2xl font-semibold text-red-700 mb-3">Corporate Office Fit-Out</h4>
+                    <p class="text-gray-600 text-sm"><strong>Client:</strong> Private Corporation<br><strong>Scope:</strong> Complete office renovation including electrical, plumbing, and partition works.<br><strong>Status:</strong> Completed</p>
+                    <p class="text-gray-600 text-sm mt-2"><strong>Details:</strong> Modern office design with open-concept spaces, smart lighting, and efficient plumbing solutions.</p>
+                    <a href="#contact" class="text-red-500 hover:underline text-sm mt-4 inline-block">Request Similar Project</a>
+                </div>
+            </div>
+
+            <!-- Project Card 3 (Placeholder) -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <img src="https://placehold.co/400x300/f87171/7f1d1d?text=Plumbing+Works&font=inter" alt="Plumbing Works" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h4 class="text-2xl font-semibold text-red-700 mb-3">Residential Plumbing Upgrade</h4>
+                    <p class="text-gray-600 text-sm"><strong>Client:</strong> Condominium Management<br><strong>Scope:</strong> Upgrading of main plumbing lines and sanitary systems for a residential complex.<br><strong>Status:</strong> Ongoing</p>
+                    <p class="text-gray-600 text-sm mt-2"><strong>Details:</strong> Phased implementation to minimize disruption to residents, ensuring long-term reliability and compliance.</p>
+                    <a href="#contact" class="text-red-500 hover:underline text-sm mt-4 inline-block">Inquire About Services</a>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <!-- LTA Sky Camera Detailed Section (SEO Content) -->
     <section id="lta-sky-camera" class="py-24 px-8 bg-white">
-        <h3 class="text-4xl font-bold mb-6 text-gray-800">LTA Sky Camera (Solar) - Detailed Project</h3>
-        <div class="max-w-6xl mx-auto">
-            <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                <strong>Project Overview:</strong><br>
-                MULTI POWER BUILDERS PTE. LTD. partnered with the Land Transport Authority (LTA) to provide a **sustainable, high-performance outdoor surveillance system**. This advanced solution combined **IP PTZ cameras** with **solar power technology**, enabling real-time traffic monitoring in high-exposure outdoor zones. 
-            </p>
-            <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                <strong>Services Provided:</strong><br>
-                As part of the project, **MULTI POWER BUILDERS** provided the following services:
-                <ul class="list-disc pl-5">
-                    <li><strong>Design and Build Surveillance Systems</strong> – Comprehensive planning, design, and implementation of the entire surveillance system, ensuring effective coverage in key traffic zones.</li>
-                    <li><strong>Solar Power Integration</strong> – Customized solar power solutions for sustainable and cost-effective camera operation in remote locations.</li>
-                    <li><strong>IP PTZ Camera Deployment</strong> – High-definition PTZ cameras capable of pan, tilt, and zoom functionalities for detailed, real-time monitoring.</li>
-                    <li><strong>System Testing and Calibration</strong> – Thorough testing of the entire system to ensure seamless performance under various environmental conditions.</li>
-                    <li><strong>Ongoing Support</strong> – Provision of ongoing maintenance, upgrades, and system support to ensure optimal performance over time.</li>
-                </ul>
-            </p>
-            <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                <strong>Challenges & Solutions:</strong><br>
-                The project presented several challenges:
-                <ul class="list-disc pl-5">
-                    <li><strong>Harsh Outdoor Conditions:</strong> We utilized weather-resistant, ruggedized cameras capable of operating in extreme weather conditions.</li>
-                    <li><strong>Off-grid Power Requirements:</strong> By integrating **solar power**, the system operates independently from the electrical grid, offering a **green solution** and reducing long-term energy costs.</li>
-                    <li><strong>Remote Accessibility:</strong> The system was configured for remote access, allowing LTA to monitor traffic in real-time via secure cloud-based platforms.</li>
-                </ul>
-            </p>
-            <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                <strong>Results & Impact:</strong><br>
-                The successful deployment of the **LTA Sky Camera** system has enhanced traffic management by providing continuous surveillance in high-exposure areas, reducing response times in emergencies, and contributing to **smart city initiatives** in Singapore. With **solar-powered technology**, the system is both environmentally friendly and cost-efficient.
-            </p>
-            <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                <strong>Why Choose MULTI POWER BUILDERS?</strong><br>
-                At **MULTI POWER BUILDERS**, we combine **technical expertise**, **innovative solutions**, and a **commitment to sustainability** to deliver results that make a lasting impact. Our team specializes in designing, implementing, and maintaining state-of-the-art systems tailored to our clients' specific needs.
-            </p>
+        <div class="max-w-4xl mx-auto">
+            <h3 class="text-4xl font-bold mb-8 text-gray-800 text-center">Project Deep Dive: LTA Sky Camera (Solar)</h3>
+            <img src="https://images.unsplash.com/photo-1519923311847-f4f0c4033e0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=400&q=80" alt="Wide shot of LTA Sky Camera" class="w-full h-auto object-cover rounded-lg shadow-md mb-8" onerror="this.src='https://placehold.co/800x400/f87171/7f1d1d?text=LTA+Sky+Camera+Installation&font=inter'">
+
+            <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+                <p class="text-xl">
+                    <strong>Project Overview:</strong><br>
+                    MULTI POWER BUILDERS PTE. LTD. partnered with the Land Transport Authority (LTA) to provide a sustainable and reliable outdoor surveillance system. This project featured advanced <strong>IP PTZ (Pan-Tilt-Zoom) cameras</strong> powered entirely by <strong>solar energy</strong>, strategically deployed in high-exposure traffic zones. This initiative highlights our expertise in integrating state-of-the-art technology with environmentally conscious power solutions.
+                </p>
+                <p>
+                    <strong>Scope of Work:</strong><br>
+                    We were responsible for the complete end-to-end design and implementation of the surveillance infrastructure. This included site assessment, system design, and the installation of robust, <strong>solar-powered IP PTZ cameras</strong> engineered for 24/7, all-weather monitoring of critical traffic intersections and roadways.
+                </p>
+                <p>
+                    <strong>Challenges & Solutions:</strong><br>
+                    The primary challenges involved designing a system that could withstand Singapore's harsh tropical weather—intense sun, heavy rain, and high humidity. Furthermore, the system required a consistent power supply in locations far from conventional power grids. We overcame these hurdles by:
+                    <ul>
+                        <li>Integrating high-efficiency <strong>solar panels and battery storage systems</strong>, calculated to ensure uninterrupted operation, even during overcast periods.</li>
+                        <li>Utilizing industrial-grade, weather-resistant camera housings and components (IP66 rated or higher).</li>
+                        <li>Implementing remote monitoring for both the camera feeds and the power system's health.</li>
+                    </ul>
+                </p>
+                <p>
+                    <strong>Results:</strong><br>
+                    The successful deployment of the LTA Sky Camera project significantly enhanced <strong>real-time traffic monitoring</strong> capabilities for the LTA. It also demonstrably reduced operational energy costs and carbon footprint by relying on <strong>100% solar power</strong>, proving it to be a sustainable and future-proof solution. This project has directly improved the safety and efficiency of road traffic management in Singapore's key high-exposure zones.
+                </p>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-red-900 text-red-200 py-10 px-6">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 text-center md:text-left">
+    <footer id="contact" class="bg-red-900 text-red-200 py-16 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12 text-center md:text-left">
             <div>
                 <p class="text-lg font-semibold mb-4 text-white">MULTI POWER BUILDERS PTE. LTD.</p>
                 <p class="mb-2">45 Jalan Pemimpin<br>#10-03 Foo Wah Industrial Building<br>SINGAPORE 577197</p>
-                <p class="mb-2"><strong>Tel:</strong> +65 9859 0679 / +65 64911336</p>
-                <p class="mb-2"><strong>Email:</strong> raymond@multipowersg.com</p>
+                <p class="mb-2"><strong>Tel:</strong> <a href="tel:+6598590679" class="hover:text-white">+65 9859 0679</a> / <a href="tel:+6564911336" class="hover:text-white">+65 64911336</a></p>
+                <p class="mb-2"><strong>Email:</strong> <a href="mailto:raymond@multipowersg.com" class="hover:text-white">raymond@multipowersg.com</a></p>
             </div>
             <div>
                 <h5 class="text-lg font-semibold mb-4 text-white">Quick Links</h5>
@@ -202,12 +315,35 @@
                 <p>Delivering excellence and reliability in every project, ensuring client satisfaction through quality workmanship and timely completion.</p>
             </div>
         </div>
-        <div class="text-center text-sm text-red-300 mt-10 pt-6 border-t border-red-800">
+        <div class="text-center text-sm text-red-300 mt-12 pt-8 border-t border-red-800">
             © 2025 MULTI POWER BUILDERS PTE. LTD. All rights reserved.
         </div>
     </footer>
 
     <!-- Optional JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('-translate-x-full');
+        });
+
+        closeMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('-translate-x-full');
+        });
+
+        // Close menu when a link is clicked
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('-translate-x-full');
+            });
+        });
+
+    </script>
 </body>
 </html>
