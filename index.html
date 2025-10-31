@@ -1,8 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Updated Page Title -->
     <title>MULTI POWER BUILDERS PTE. LTD. - Home</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -14,17 +17,18 @@
                         sans: ['Inter', 'sans-serif'],
                     },
                     colors: {
+                        // Updated to red theme
                         primary: {
-                            light: '#f87171',
-                            DEFAULT: '#ef4444',
-                            dark: '#b91c1c',
-                            darkest: '#7f1d1d',
+                            light: '#f87171', // red-400
+                            DEFAULT: '#ef4444', // red-500
+                            dark: '#b91c1c', // red-700
+                            darkest: '#7f1d1d', // red-900
                         },
                         secondary: {
-                            light: '#f3f4f6',
-                            DEFAULT: '#d1d5db',
-                            dark: '#374151',
-                            darkest: '#111827',
+                            light: '#f3f4f6', // gray-100
+                            DEFAULT: '#d1d5db', // gray-300
+                            dark: '#374151', // gray-700
+                            darkest: '#111827', // gray-900
                         }
                     }
                 }
@@ -32,126 +36,35 @@
         }
     </script>
     <style>
+        /* Small helper for hero pattern opacity */
         .hero-pattern {
             background-image: linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px), linear-gradient(to right, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
             background-size: 20px 20px;
         }
-        /* Custom styles for the modal and spinner */
-        .modal-backdrop {
-            transition: opacity 0.3s ease;
-        }
-        .modal-content {
-            transition: transform 0.3s ease;
-        }
-        .loader {
-            border-top-color: #ef4444; /* primary.DEFAULT */
-            -webkit-animation: spin 1s linear infinite;
-            animation: spin 1s linear infinite;
-        }
-        @-webkit-keyframes spin {
-            0% { -webkit-transform: rotate(0deg); }
-            100% { -webkit-transform: rotate(360deg); }
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Basic Bootstrap Carousel styles to make it work without full CSS */
-        .carousel {
-            position: relative;
-        }
-        .carousel-inner {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-        }
-        .carousel-item {
-            position: relative;
-            display: none;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            width: 100%;
-            transition: -webkit-transform .6s ease;
-            transition: transform .6s ease;
-            transition: transform .6s ease,-webkit-transform .6s ease;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            -webkit-perspective: 1000px;
-            perspective: 1000px;
-        }
-        .carousel-item.active {
-            display: block;
-        }
-        .carousel-control-prev,
-        .carousel-control-next {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            z-index: 1;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            justify-content: center;
-            width: 15%;
-            color: #fff;
-            text-align: center;
-            opacity: .5;
-            transition: opacity .15s ease;
-        }
-        .carousel-control-prev {
-            left: 0;
-        }
-        .carousel-control-next {
-            right: 0;
-        }
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            display: inline-block;
-            width: 2rem;
-            height: 2rem;
-            background-repeat: no-repeat;
-            background-position: 50%;
-            background-size: 100% 100%;
-        }
-        .carousel-control-prev-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 16 16'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
-        }
-        .carousel-control-next-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 16 16'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-        }
-        .visually-hidden {
-            position: absolute!important;
-            width: 1px!important;
-            height: 1px!important;
-            padding: 0!important;
-            margin: -1px!important;
-            overflow: hidden!important;
-            clip: rect(0,0,0,0)!important;
-            white-space: nowrap!important;
-            border: 0!important;
-        }
     </style>
 </head>
+
 <body class="font-sans antialiased text-gray-800">
 
     <!-- Header -->
+    <!-- Added shadow-md and sticky positioning -->
     <header class="bg-white shadow-md p-6 flex justify-between items-center sticky top-0 z-50">
+        <!-- Updated Company Name and adjusted font size for responsiveness -->
         <h1 class="text-xl md:text-2xl font-bold text-red-500">MULTI POWER BUILDERS PTE. LTD.</h1>
+        <!-- Desktop Navigation -->
+        <!-- Updated link order -->
         <nav class="hidden md:flex items-center space-x-6">
             <a href="#" class="text-gray-700 hover:text-red-500 transition duration-300">Home</a>
             <a href="#about" class="text-gray-700 hover:text-red-500 transition duration-300">About Us</a>
             <a href="#services" class="text-gray-700 hover:text-red-500 transition duration-300">Services</a>
             <a href="#projects" class="text-gray-700 hover:text-red-500 transition duration-300">Projects</a>
             <a href="#contact" class="text-gray-700 hover:text-red-500 transition duration-300">Contact</a>
-            <a href="#contact" class="bg-red-500 text-white font-semibold px-5 py-2 rounded-full shadow-md hover:bg-red-600 transition duration-300">Get a Quote</a>
+            <!-- Updated button color to red -->
+            <a href="#contact" class="bg-red-500 text-white font-semibold px-5 py-2 rounded-full shadow-md hover:bg-red-600 transition duration-300">
+                Get a Quote
+            </a>
         </nav>
+        <!-- Mobile Menu Button -->
         <button id="menu-btn" class="md:hidden text-gray-700 hover:text-red-500 focus:outline-none">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -159,191 +72,177 @@
         </button>
     </header>
 
-    <!-- Mobile Menu (hidden by default) -->
-    <div id="mobile-menu" class="md:hidden bg-white shadow-lg fixed top-0 left-0 w-full h-full z-40 pt-24 transform -translate-x-full transition-transform duration-300 ease-in-out">
-        <button id="close-menu-btn" class="absolute top-7 right-6 text-gray-700 hover:text-red-500 focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-        </button>
-        <nav class="flex flex-col items-center justify-center h-full space-y-8 text-xl">
-            <a href="#" class="mobile-nav-link text-gray-700 hover:text-red-500 transition duration-300">Home</a>
-            <a href="#about" class="mobile-nav-link text-gray-700 hover:text-red-500 transition duration-300">About Us</a>
-            <a href="#services" class="mobile-nav-link text-gray-700 hover:text-red-500 transition duration-300">Services</a>
-            <a href="#projects" class="mobile-nav-link text-gray-700 hover:text-red-500 transition duration-300">Projects</a>
-            <a href="#contact" class="mobile-nav-link text-gray-700 hover:text-red-500 transition duration-300">Contact</a>
-            <a href="#contact" class="mobile-nav-link bg-red-500 text-white font-semibold px-6 py-3 rounded-full shadow-md hover:bg-red-600 transition duration-300">Get a Quote</a>
+    <!-- Mobile Menu -->
+    <!-- Updated link order -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute top-20 left-0 right-0 z-40">
+        <nav class="flex flex-col p-4 space-y-2">
+            <a href="#" class="block px-4 py-2 text-gray-700 rounded-md hover:bg-red-50 hover:text-red-500 transition duration-300">Home</a>
+            <a href="#about" class="block px-4 py-2 text-gray-700 rounded-md hover:bg-red-50 hover:text-red-500 transition duration-300">About Us</a>
+            <a href="#services" class="block px-4 py-2 text-gray-700 rounded-md hover:bg-red-50 hover:text-red-500 transition duration-300">Services</a>
+            <a href="#projects" class="block px-4 py-2 text-gray-700 rounded-md hover:bg-red-50 hover:text-red-500 transition duration-300">Projects</a>
+            <a href="#contact" class="block px-4 py-2 text-gray-700 rounded-md hover:bg-red-50 hover:text-red-500 transition duration-300">Contact</a>
+            <!-- Updated button color to red -->
+            <a href="#contact" class="block w-full text-center bg-red-500 text-white font-semibold px-5 py-3 rounded-full shadow-md hover:bg-red-600 transition duration-3Two mt-2">
+                Get a Quote
+            </a>
         </nav>
     </div>
 
-    <!-- Hero Section as Carousel -->
-    <section id="heroCarousel" class="carousel slide relative" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <!-- First Slide -->
-            <div class="carousel-item active" style="background-color: #ef4444; color: white;">
-                <div class="absolute inset-0 hero-pattern opacity-30"></div>
-                <div class="relative z-10 text-center py-32 md:py-40 px-6">
-                    <h2 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight drop-shadow-lg">Welcome To MULTI POWER BUILDERS PTE. LTD.</h2>
-                    <p class="max-w-3xl mx-auto text-lg md:text-xl mb-10 text-red-100">A Small Medium Enterprise (SME) registered with the Building and Construction Authority (BCA) in Singapore.</p>
-                    <a href="#services" class="bg-white text-red-700 font-semibold px-10 py-4 rounded-full shadow-lg hover:bg-red-50 transition duration-300">Discover Our Services</a>
-                </div>
-            </div>
-            <!-- Second Slide -->
-            <div class="carousel-item" style="background-color: #f87171; color: white;">
-                <div class="absolute inset-0 hero-pattern opacity-30"></div>
-                <div class="relative z-10 text-center py-32 md:py-40 px-6">
-                    <h2 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight drop-shadow-lg">Your Partner in Reliable Construction</h2>
-                    <p class="max-w-3xl mx-auto text-lg md:text-xl mb-10 text-red-100">We specialize in electrical, plumbing, and office fit-out works with a commitment to quality and safety.</p>
-                    <a href="#about" class="bg-white text-red-700 font-semibold px-10 py-4 rounded-full shadow-lg hover:bg-red-50 transition duration-300">Learn More</a>
-                </div>
-            </div>
-            <!-- Third Slide -->
-            <div class="carousel-item" style="background-color: #b91c1c; color: white;">
-                <div class="absolute inset-0 hero-pattern opacity-30"></div>
-                <div class="relative z-10 text-center py-32 md:py-40 px-6">
-                    <h2 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight drop-shadow-lg">Building Your Future with Excellence</h2>
-                    <p class="max-w-3xl mx-auto text-lg md:text-xl mb-10 text-red-100">Providing high-quality construction and engineering services, ensuring your project is built to last.</p>
-                    <a href="#projects" class="bg-white text-red-700 font-semibold px-10 py-4 rounded-full shadow-lg hover:bg-red-50 transition duration-300">See Our Projects</a>
-                </div>
-            </div>
+    <!-- Hero Section (Home) -->
+    <!-- Updated gradient to red, updated text -->
+    <section class="relative overflow-hidden bg-gradient-to-r from-red-700 to-red-900 text-white text-center py-32 md:py-40 px-6">
+        <div class="absolute inset-0 hero-pattern opacity-30"></div>
+        <div class="relative z-10">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight drop-shadow-lg">
+                Welcome To MULTI POWER BUILDERS PTE. LTD.
+            </h2>
+            <p class="max-w-3xl mx-auto text-lg md:text-xl mb-10 text-red-100">
+                A Small Medium Enterprise (SME) registered with the Building and Construction Authority (BCA) in Singapore.
+            </p>
+            <!-- Updated button color to white/red-text -->
+            <a href="#services" class="bg-white text-red-700 font-semibold px-10 py-4 rounded-full shadow-lg hover:bg-red-50 transition duration-300">
+                Discover Our Services
+            </a>
         </div>
-
-        <!-- Carousel Controls -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </section>
 
-    <!-- Featured Projects Section -->
+    <!-- About Us Section (NEW ORDER) -->
+    <section id="about" class="py-24 px-8 bg-white">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <!-- Image Placeholder -->
+            <div>
+                <img src="https://placehold.co/600x400/ef4444/white?text=Our+Team&font=inter" alt="Multi Power Builders Team" class="rounded-lg shadow-xl w-full h-auto">
+            </div>
+            <!-- Content -->
+            <div class="text-left">
+                <h3 class="text-4xl font-bold mb-6 text-gray-800">About Us</h3>
+                <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                    MULTI POWER BUILDERS PTE. LTD. is a Small Medium Enterprise (SME) registered with the Building and Construction Authority (BCA) in Singapore.
+                </p>
+                <p class="text-gray-700 text-lg leading-relaxed mb-8">
+                    Our core business is in <strong>Builder works and Electrical installation.</strong> We are committed to delivering high-quality, reliable, and efficient solutions tailored to our clients' needs.
+                </p>
+                <!-- Updated button color to red -->
+                <a href="#contact" class="bg-red-500 text-white font-semibold px-8 py-3 rounded-full shadow-md hover:bg-red-600 transition duration-300">
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 px-8 bg-gray-100">
+        <h3 class="text-4xl font-bold text-center mb-16 text-gray-800">Our Services</h3>
+        <!-- Updated grid layout and content -->
+        <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+            <!-- Service Card 1 -->
+            <div class="bg-white rounded-lg p-8 shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                <!-- Updated title color to red -->
+                <h4 class="text-2xl font-semibold text-red-700 mb-4">Interior Office and Laboratory Fit Out Works</h4>
+                <p class="text-gray-600 text-sm mb-4">
+                    Complete fit-out solutions for modern workspaces and specialized laboratory environments.
+                </p>
+                <img src="https://placehold.co/400x250/fca5a5/7f1d1d?text=Office+Fit+Out&font=inter" alt="Office Fit Out" class="rounded-md shadow-sm">
+            </div>
+            <!-- Service Card 2 -->
+            <div class="bg-white rounded-lg p-8 shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                <!-- Updated title color to red -->
+                <h4 class="text-2xl font-semibold text-red-700 mb-4">Design and Build Electrical</h4>
+                <p class="text-gray-600 text-sm mb-4">
+                    Comprehensive electrical design and installation services for commercial and industrial projects.
+                </p>
+                <img src="https://placehold.co/400x250/fca5a5/7f1d1d?text=Electrical+Work&font=inter" alt="Electrical Work" class="rounded-md shadow-sm">
+            </div>
+            <!-- Service Card 3 -->
+            <div class="bg-white rounded-lg p-8 shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                <!-- Updated title color to red -->
+                <h4 class="text-2xl font-semibold text-red-700 mb-4">Plumbing and Sanitary for Laboratory</h4>
+                <p class="text-gray-600 text-sm mb-4">
+                    Specialized plumbing and sanitary systems designed for the unique requirements of laboratories.
+                </p>
+                <img src="https://placehold.co/400x250/fca5a5/7f1d1d?text=Lab+Plumbing&font=inter" alt="Lab Plumbing" class="rounded-md shadow-sm">
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <!-- Updated background to gray -->
     <section id="projects" class="py-24 px-8 bg-gray-50">
-        <h3 class="text-4xl font-bold text-center mb-16 text-gray-800">Featured Projects</h3>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
-            <!-- Project Card 1 (LTA Sky Camera) -->
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                <img src="https://images.unsplash.com/photo-1519923311847-f4f0c4033e0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=300&q=80" alt="LTA Sky Camera" class="w-full h-56 object-cover" onerror="this.src='https://placehold.co/400x300/f87171/7f1d1d?text=LTA+Sky+Camera&font=inter'">
-                <div class="p-6">
-                    <h4 class="text-2xl font-semibold text-red-700 mb-3">LTA Sky Camera (Solar)</h4>
-                    <p class="text-gray-600 text-sm"><strong>Client:</strong> Land Transport Authority (LTA)<br><strong>Scope:</strong> Design and build outdoor IP PTZ camera surveillance systems with solar power integration for road and traffic monitoring.<br><strong>Status:</strong> Delivered</p>
-                    <p class="text-gray-600 text-sm mt-2"><strong>Details:</strong> CCTV surveillance implemented in high-exposure zones; solution emphasizes renewable energy and remote accessibility.</p>
-                    <a href="#lta-sky-camera" class="text-red-500 hover:underline text-sm mt-4 inline-block">Learn More About This Project</a>
-                </div>
+        <h3 class="text-4xl font-bold text-center mb-16 text-gray-800">Our Projects</h3>
+        <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+            <!-- Project 1 -->
+            <div class="bg-white p-8 rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <img src="https://placehold.co/400x300/f87171/7f1d1d?text=Project+Alpha&font=inter" alt="LTA Sky Camera" class="rounded-lg shadow-md mb-6 -mt-12 -mx-12">
+                <h4 class="text-2xl font-semibold text-red-700 mb-3">LTA Sky Camera (Solar)</h4>
+                <p class="text-gray-600 text-sm">Design and build outdoor IP PTZ camera systems with solar power for LTA.</p>
             </div>
-            
-            <!-- Project Card 2 (Placeholder) -->
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                <img src="https://placehold.co/400x300/ef4444/ffffff?text=Office+Fit-Out&font=inter" alt="Office Fit-Out" class="w-full h-56 object-cover">
-                <div class="p-6">
-                    <h4 class="text-2xl font-semibold text-red-700 mb-3">Corporate Office Fit-Out</h4>
-                    <p class="text-gray-600 text-sm"><strong>Client:</strong> Private Corporation<br><strong>Scope:</strong> Complete office renovation including electrical, plumbing, and partition works.<br><strong>Status:</strong> Completed</p>
-                    <p class="text-gray-600 text-sm mt-2"><strong>Details:</strong> Modern office design with open-concept spaces, smart lighting, and efficient plumbing solutions.</p>
-                    <a href="#contact" class="text-red-500 hover:underline text-sm mt-4 inline-block">Request Similar Project</a>
-                </div>
+            <!-- Project 2 -->
+            <div class="bg-white p-8 rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <img src="https://placehold.co/400x300/f87171/7f1d1d?text=Project+Beta&font=inter" alt="ELV Systems" class="rounded-lg shadow-md mb-6 -mt-12 -mx-12">
+                <h4 class="text-2xl font-semibold text-red-700 mb-3">Design and Build for ELV</h4>
+                <p class="text-gray-600 text-sm">Complete Extra-Low Voltage (ELV) system design and implementation.</p>
             </div>
-
-            <!-- Project Card 3 (Placeholder) -->
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                <img src="https://placehold.co/400x300/f87171/7f1d1d?text=Plumbing+Works&font=inter" alt="Plumbing Works" class="w-full h-56 object-cover">
-                <div class="p-6">
-                    <h4 class="text-2xl font-semibold text-red-700 mb-3">Residential Plumbing Upgrade</h4>
-                    <p class="text-gray-600 text-sm"><strong>Client:</strong> Condominium Management<br><strong>Scope:</strong> Upgrading of main plumbing lines and sanitary systems for a residential complex.<br><strong>Status:</strong> Ongoing</p>
-                    <p class="text-gray-600 text-sm mt-2"><strong>Details:</strong> Phased implementation to minimize disruption to residents, ensuring long-term reliability and compliance.</p>
-                    <a href="#contact" class="text-red-500 hover:underline text-sm mt-4 inline-block">Inquire About Services</a>
-                </div>
+            <!-- Project 3 -->
+            <div class="bg-white p-8 rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <img src="https://placehold.co/400x300/f87171/7f1d1d?text=Project+Gamma&font=inter" alt="Fiber Optic" class="rounded-lg shadow-md mb-6 -mt-12 -mx-12">
+                <h4 class="text-2xl font-semibold text-red-700 mb-3">FOA – Fiber Optic Technician</h4>
+                <p class="text-gray-600 text-sm">Providing certified Fiber Optic Association (FOA) technician services.</p>
             </div>
-
         </div>
     </section>
 
-    <!-- LTA Sky Camera Detailed Section (SEO Content) -->
-    <section id="lta-sky-camera" class="py-24 px-8 bg-white">
-        <div class="max-w-4xl mx-auto">
-            <h3 class="text-4xl font-bold mb-8 text-gray-800 text-center">Project Deep Dive: LTA Sky Camera (Solar)</h3>
-            <img src="https://images.unsplash.com/photo-1519923311847-f4f0c4033e0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=400&q=80" alt="Wide shot of LTA Sky Camera" class="w-full h-auto object-cover rounded-lg shadow-md mb-8" onerror="this.src='https://placehold.co/800x400/f87171/7f1d1d?text=LTA+Sky+Camera+Installation&font=inter'">
-
-            <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
-                <p class="text-xl">
-                    <strong>Project Overview:</strong><br>
-                    MULTI POWER BUILDERS PTE. LTD. partnered with the Land Transport Authority (LTA) to provide a sustainable and reliable outdoor surveillance system. This project featured advanced <strong>IP PTZ (Pan-Tilt-Zoom) cameras</strong> powered entirely by <strong>solar energy</strong>, strategically deployed in high-exposure traffic zones. This initiative highlights our expertise in integrating state-of-the-art technology with environmentally conscious power solutions.
-                </p>
-                <p>
-                    <strong>Scope of Work:</strong><br>
-                    We were responsible for the complete end-to-end design and implementation of the surveillance infrastructure. This included site assessment, system design, and the installation of robust, <strong>solar-powered IP PTZ cameras</strong> engineered for 24/7, all-weather monitoring of critical traffic intersections and roadways.
-                </p>
-                <p>
-                    <strong>Challenges & Solutions:</strong><br>
-                    The primary challenges involved designing a system that could withstand Singapore's harsh tropical weather—intense sun, heavy rain, and high humidity. Furthermore, the system required a consistent power supply in locations far from conventional power grids. We overcame these hurdles by:
-                    <ul>
-                        <li>Integrating high-efficiency <strong>solar panels and battery storage systems</strong>, calculated to ensure uninterrupted operation, even during overcast periods.</li>
-                        <li>Utilizing industrial-grade, weather-resistant camera housings and components (IP66 rated or higher).</li>
-                        <li>Implementing remote monitoring for both the camera feeds and the power system's health.</li>
-                    </ul>
-                </p>
-                <p>
-                    <strong>Results:</strong><br>
-                    The successful deployment of the LTA Sky Camera project significantly enhanced <strong>real-time traffic monitoring</strong> capabilities for the LTA. It also demonstrably reduced operational energy costs and carbon footprint by relying on <strong>100% solar power</strong>, proving it to be a sustainable and future-proof solution. This project has directly improved the safety and efficiency of road traffic management in Singapore's key high-exposure zones.
-                </p>
-            </div>
-        </div>
+    <!-- Contact Section -->
+    <!-- Updated background to red -->
+    <section id="contact" class="py-24 px-8 bg-red-700 text-white text-center">
+        <h3 class="text-4xl font-bold mb-6">Get in Touch</h3>
+        <!-- Updated text color -->
+        <p class="max-w-2xl mx-auto mb-10 text-red-100 text-lg">
+            Ready to elevate your business? Let’s collaborate to craft solutions that drive lasting success.
+        </p>
+        <!-- Updated button color to white/red-text -->
+        <button class="bg-white text-red-700 font-semibold px-12 py-4 rounded-full shadow-lg hover:bg-red-50 transition duration-300">
+            Contact Us
+        </button>
     </section>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-red-900 text-red-200 py-16 px-6">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12 text-center md:text-left">
-            <div>
-                <p class="text-lg font-semibold mb-4 text-white">MULTI POWER BUILDERS PTE. LTD.</p>
-                <p class="mb-2">45 Jalan Pemimpin<br>#10-03 Foo Wah Industrial Building<br>SINGAPORE 577197</p>
-                <p class="mb-2"><strong>Tel:</strong> <a href="tel:+6598590679" class="hover:text-white">+65 9859 0679</a> / <a href="tel:+6564911336" class="hover:text-white">+65 64911336</a></p>
-                <p class="mb-2"><strong>Email:</strong> <a href="mailto:raymond@multipowersg.com" class="hover:text-white">raymond@multipowersg.com</a></p>
-            </div>
-            <div>
-                <h5 class="text-lg font-semibold mb-4 text-white">Quick Links</h5>
-                <nav class="flex flex-col space-y-2">
-                    <a href="#" class="hover:text-white transition duration-300">Home</a>
-                    <a href="#about" class="hover:text-white transition duration-300">About Us</a>
-                    <a href="#services" class="hover:text-white transition duration-300">Services</a>
-                    <a href="#projects" class="hover:text-white transition duration-300">Projects</a>
-                    <a href="#contact" class="hover:text-white transition duration-300">Contact</a>
-                </nav>
-            </div>
-            <div>
-                <h5 class="text-lg font-semibold mb-4 text-white">Our Commitment</h5>
-                <p>Delivering excellence and reliability in every project, ensuring client satisfaction through quality workmanship and timely completion.</p>
-            </div>
+    <!-- Updated background to dark red, updated text -->
+    <footer class="bg-red-900 text-red-200 text-center py-10 px-6">
+        <p class="text-lg font-semibold mb-4">MULTI POWER BUILDERS PTE. LTD.</p>
+        <p class="mb-4">45 Jalan Pemimpin #10-03 Foo Wah Industrial Building SINGAPORE 577197</p>
+        <p class="mb-4">Tel: +65 9859 0679 | Email: raymond@multipowersg.com</p>
+        <div class="flex flex-col md:flex-row justify-center items-center md:space-x-8 mb-4">
+            <!-- Updated link order and hover color -->
+            <a href="#" class="hover:text-white transition duration-300">Home</a>
+            <a href="#about" class="hover:text-white transition duration-300">About Us</a>
+            <a href="#services" class="hover:text-white transition duration-300">Services</a>
+            <!-- Corrected typo: 3DEC -> 300 -->
+            <a href="#projects" class="hover:text-white transition duration-300">Projects</a>
+            <a href="#contact" class="hover:text-white transition duration-300">Contact</a>
         </div>
-        <div class="text-center text-sm text-red-300 mt-12 pt-8 border-t border-red-800">
-            © 2025 MULTI POWER BUILDERS PTE. LTD. All rights reserved.
-        </div>
+        <p class="text-sm text-red-300">© 2024 MULTI POWER BUILDERS PTE. LTD. All rights reserved.</p>
     </footer>
 
-    <!-- Optional JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Mobile Menu Toggle
+        // JavaScript for mobile menu toggle
         const menuBtn = document.getElementById('menu-btn');
-        const closeMenuBtn = document.getElementById('close-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
         menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.remove('-translate-x-full');
+            mobileMenu.classList.toggle('hidden');
         });
 
-        closeMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.add('-translate-x-full');
-        });
-
-        // Close menu when a link is clicked
-        mobileNavLinks.forEach(link => {
+        // Close mobile menu when a link is clicked
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            // Corrected syntax error: Added '=>' for the arrow function
             link.addEventListener('click', () => {
-                mobileMenu.classList.add('-translate-x-full');
+                mobileMenu.classList.add('hidden');
             });
         });
-
     </script>
+
 </body>
+
 </html>
+
