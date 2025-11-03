@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +8,6 @@
     <meta name="author" content="Multi Power Builders Pte Ltd">
     <title>Multi Power Builders - BCA Registered Building Contractor Singapore</title>
     
-    <!-- Schema.org markup for local business -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -85,38 +83,6 @@
   --color-orange-500-rgb: 168, 75, 47;
   --color-orange-400-rgb: 230, 129, 97;
 
-  /* Background color tokens (Light Mode) */
-  --color-bg-1: rgba(59, 130, 246, 0.08);
-  --color-bg-2: rgba(245, 158, 11, 0.08);
-  --color-bg-3: rgba(34, 197, 94, 0.08);
-  --color-bg-4: rgba(239, 68, 68, 0.08);
-  --color-bg-5: rgba(147, 51, 234, 0.08);
-  --color-bg-6: rgba(249, 115, 22, 0.08);
-  --color-bg-7: rgba(236, 72, 153, 0.08);
-  --color-bg-8: rgba(6, 182, 212, 0.08);
-
-  /* Semantic Color Tokens (Light Mode) */
-  --color-background: var(--color-cream-50);
-  --color-surface: var(--color-cream-100);
-  --color-text: var(--color-slate-900);
-  --color-text-secondary: var(--color-slate-500);
-  --color-primary: var(--color-teal-500);
-  --color-primary-hover: var(--color-teal-600);
-  --color-primary-active: var(--color-teal-700);
-  --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
-  --color-secondary-hover: rgba(var(--color-brown-600-rgb), 0.2);
-  --color-secondary-active: rgba(var(--color-brown-600-rgb), 0.25);
-  --color-border: rgba(var(--color-brown-600-rgb), 0.2);
-  --color-btn-primary-text: var(--color-cream-50);
-  --color-card-border: rgba(var(--color-brown-600-rgb), 0.12);
-  --color-card-border-inner: rgba(var(--color-brown-600-rgb), 0.12);
-  --color-error: var(--color-red-500);
-  --color-success: var(--color-teal-500);
-  --color-warning: var(--color-orange-500);
-  --color-info: var(--color-slate-500);
-  --color-focus-ring: rgba(var(--color-teal-500-rgb), 0.4);
-  --color-select-caret: rgba(var(--color-slate-900-rgb), 0.8);
-
   /* Common style patterns */
   --focus-ring: 0 0 0 3px var(--color-focus-ring);
   --focus-outline: 2px solid var(--color-primary);
@@ -124,12 +90,6 @@
   --status-border-opacity: 0.25;
   --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-
-  /* RGB versions for opacity control */
-  --color-success-rgb: 33, 128, 141;
-  --color-error-rgb: 192, 21, 47;
-  --color-warning-rgb: 168, 75, 47;
-  --color-info-rgb: 98, 108, 113;
 
   /* Typography */
   --font-family-base: "FKGroteskNeue", "Geist", "Inter", -apple-system,
@@ -214,8 +174,47 @@
   --accent-orange-hover: var(--singapore-red-hover);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
+body.light-mode {
+  /* Background color tokens (Light Mode) */
+  --color-bg-1: rgba(59, 130, 246, 0.08);
+  --color-bg-2: rgba(245, 158, 11, 0.08);
+  --color-bg-3: rgba(34, 197, 94, 0.08);
+  --color-bg-4: rgba(239, 68, 68, 0.08);
+  --color-bg-5: rgba(147, 51, 234, 0.08);
+  --color-bg-6: rgba(249, 115, 22, 0.08);
+  --color-bg-7: rgba(236, 72, 153, 0.08);
+  --color-bg-8: rgba(6, 182, 212, 0.08);
+
+  /* Semantic Color Tokens (Light Mode) */
+  --color-background: var(--color-cream-50);
+  --color-surface: var(--color-cream-100);
+  --color-text: var(--color-slate-900);
+  --color-text-secondary: var(--color-slate-500);
+  --color-primary: var(--color-teal-500);
+  --color-primary-hover: var(--color-teal-600);
+  --color-primary-active: var(--color-teal-700);
+  --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
+  --color-secondary-hover: rgba(var(--color-brown-600-rgb), 0.2);
+  --color-secondary-active: rgba(var(--color-brown-600-rgb), 0.25);
+  --color-border: rgba(var(--color-brown-600-rgb), 0.2);
+  --color-btn-primary-text: var(--color-cream-50);
+  --color-card-border: rgba(var(--color-brown-600-rgb), 0.12);
+  --color-card-border-inner: rgba(var(--color-brown-600-rgb), 0.12);
+  --color-error: var(--color-red-500);
+  --color-success: var(--color-teal-500);
+  --color-warning: var(--color-orange-500);
+  --color-info: var(--color-slate-500);
+  --color-focus-ring: rgba(var(--color-teal-500-rgb), 0.4);
+  --color-select-caret: rgba(var(--color-slate-900-rgb), 0.8);
+
+  /* RGB versions for opacity control */
+  --color-success-rgb: 33, 128, 141;
+  --color-error-rgb: 192, 21, 47;
+  --color-warning-rgb: 168, 75, 47;
+  --color-info-rgb: 98, 108, 113;
+}
+
+body.dark-mode {
     --color-gray-400-rgb: 119, 124, 124;
     --color-teal-300-rgb: 50, 184, 198;
     --color-gray-300-rgb: 167, 169, 169;
@@ -257,7 +256,6 @@
     --color-error-rgb: var(--color-red-400-rgb);
     --color-warning-rgb: var(--color-orange-400-rgb);
     --color-info-rgb: var(--color-gray-300-rgb);
-  }
 }
 
 @font-face {
@@ -271,8 +269,6 @@ html {
   font-size: var(--font-size-base);
   font-family: var(--font-family-base);
   line-height: var(--line-height-normal);
-  color: var(--color-text);
-  background-color: var(--color-background);
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -281,6 +277,8 @@ html {
 body {
   margin: 0;
   padding: 0;
+  background-color: var(--color-background);
+  color: var(--color-text);
 }
 
 *,
@@ -1224,7 +1222,6 @@ footer::before {
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="header-container">
             <div class="logo">Multi Power Builders</div>
@@ -1238,14 +1235,12 @@ footer::before {
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
+            <button id="theme-toggle" style="margin-left:20px;padding:8px 16px;border-radius:8px;border:none;cursor:pointer;background:#33a0a1;color:#fff;">Toggle Theme</button>
         </div>
     </header>
 
-    <!-- Main Content -->
     <main style="padding-top: 80px;">
-        <!-- Home Page -->
         <div id="home" class="page active">
-            <!-- Hero Section -->
             <section class="hero">
                 <h1>🇸🇬 Singapore's Trusted Building &amp; Electrical Contractor</h1>
                 <p class="tagline">Serving Singapore Since 2017 | BCA Registered | FOA Certified</p>
@@ -1258,7 +1253,6 @@ footer::before {
                 <button class="cta-button" onclick="navigateToPage('contact')">📞 Get Your Free Quote Today</button>
             </section>
 
-            <!-- Quick Stats -->
             <section class="section">
                 <div class="container">
                     <div class="stats-grid">
@@ -1282,7 +1276,6 @@ footer::before {
                 </div>
             </section>
 
-            <!-- Featured Services -->
             <section class="section section-alt">
                 <div class="container">
                     <h2 class="section-title">Our Core Services Across Singapore</h2>
@@ -1331,7 +1324,6 @@ footer::before {
                 </div>
             </section>
 
-            <!-- About Preview -->
             <section class="section">
                 <div class="container">
                     <h2 class="section-title">Why Singapore Chooses Multi Power Builders</h2>
@@ -1367,7 +1359,6 @@ footer::before {
                 </div>
             </section>
 
-            <!-- Testimonials -->
             <section class="section section-alt">
                 <div class="container">
                     <h2 class="section-title">Client Testimonials</h2>
@@ -1406,7 +1397,6 @@ footer::before {
                 </div>
             </section>
 
-            <!-- CTA Section -->
             <section class="section">
                 <div class="container text-center">
                     <h2 class="section-title">Ready to Start Your Project?</h2>
@@ -1418,7 +1408,6 @@ footer::before {
             </section>
         </div>
 
-        <!-- About Page -->
         <div id="about" class="page">
             <section class="section">
                 <div class="container">
@@ -1555,7 +1544,6 @@ footer::before {
             </section>
         </div>
 
-        <!-- Services Page -->
         <div id="services" class="page">
             <section class="section">
                 <div class="container">
@@ -1564,7 +1552,6 @@ footer::before {
                         Comprehensive building construction, electrical installation, fiber optic, ELV systems, and interior fit-out services across Singapore
                     </p>
 
-                    <!-- Service 1: Building & Construction Works -->
                     <div class="service-detail">
                         <div class="service-icon">🏗️</div>
                         <h2>Building &amp; Construction Works</h2>
@@ -1614,7 +1601,6 @@ footer::before {
                         </div>
                     </div>
 
-                    <!-- Service 2: Plumbing & Sanitary Works -->
                     <div class="service-detail mt-32">
                         <div class="service-icon">🔧</div>
                         <h2>Plumbing &amp; Sanitary Works</h2>
@@ -1662,7 +1648,6 @@ footer::before {
                         </div>
                     </div>
 
-                    <!-- Service 3: Electrical Works -->
                     <div class="service-detail mt-32">
                         <div class="service-icon">⚡</div>
                         <h2>Electrical Installation &amp; Design Services</h2>
@@ -1711,7 +1696,6 @@ footer::before {
                         </div>
                     </div>
 
-                    <!-- Service 4: Telecommunications & Data -->
                     <div class="service-detail mt-32">
                         <div class="service-icon">📡</div>
                         <h2>Fiber Optic &amp; Telecommunications Services</h2>
@@ -1759,7 +1743,6 @@ footer::before {
                         </div>
                     </div>
 
-                    <!-- Service 5: Extra Low Voltage Systems -->
                     <div class="service-detail mt-32">
                         <div class="service-icon">🔐</div>
                         <h2>Extra Low Voltage (ELV) Systems</h2>
@@ -1808,7 +1791,6 @@ footer::before {
                         </div>
                     </div>
 
-                    <!-- Service 6: Specialized Projects -->
                     <div class="service-detail mt-32">
                         <div class="service-icon">🎯</div>
                         <h2>Specialized Projects &amp; Custom Solutions</h2>
@@ -1855,7 +1837,6 @@ footer::before {
                         </div>
                     </div>
 
-                    <!-- Service 7: Interior Fit-Out Works -->
                     <div class="service-detail mt-32">
                         <div class="service-icon">🏢</div>
                         <h2>Interior Fit-Out Works</h2>
@@ -1915,7 +1896,6 @@ footer::before {
             </section>
         </div>
 
-        <!-- Portfolio Page -->
         <div id="portfolio" class="page">
             <section class="section">
                 <div class="container">
@@ -1925,7 +1905,6 @@ footer::before {
                         and specialized installations across Singapore
                     </p>
 
-                    <!-- Portfolio Filters -->
                     <div class="portfolio-filters">
                         <button class="filter-btn active" data-filter="all">All Projects</button>
                         <button class="filter-btn" data-filter="Building & Construction Works">Building Works</button>
@@ -1937,9 +1916,7 @@ footer::before {
                         <button class="filter-btn" data-filter="Specialized Projects">Specialized</button>
                     </div>
 
-                    <!-- Portfolio Grid -->
                     <div class="portfolio-grid" id="portfolioGrid">
-                        <!-- Project 1 -->
                         <div class="portfolio-card" data-category="Building & Construction Works">
                             <div class="portfolio-image">Commercial Building Waterproofing</div>
                             <div class="portfolio-content">
@@ -1957,7 +1934,6 @@ footer::before {
                             </div>
                         </div>
 
-                        <!-- Project 2 -->
                         <div class="portfolio-card" data-category="Electrical Works">
                             <div class="portfolio-image">LED Lighting Installation</div>
                             <div class="portfolio-content">
@@ -1975,7 +1951,6 @@ footer::before {
                             </div>
                         </div>
 
-                        <!-- Project 3 -->
                         <div class="portfolio-card" data-category="Interior Fit-Out Works">
                             <div class="portfolio-image">Laboratory Facility</div>
                             <div class="portfolio-content">
@@ -1993,7 +1968,6 @@ footer::before {
                             </div>
                         </div>
 
-                        <!-- Project 4 -->
                         <div class="portfolio-card" data-category="Telecommunications & Data">
                             <div class="portfolio-image">Fiber Optic Network</div>
                             <div class="portfolio-content">
@@ -2011,7 +1985,6 @@ footer::before {
                             </div>
                         </div>
 
-                        <!-- Project 5 -->
                         <div class="portfolio-card" data-category="Extra Low Voltage Systems">
                             <div class="portfolio-image">Security Systems Installation</div>
                             <div class="portfolio-content">
@@ -2029,7 +2002,6 @@ footer::before {
                             </div>
                         </div>
 
-                        <!-- Project 6 -->
                         <div class="portfolio-card" data-category="Specialized Projects">
                             <div class="portfolio-image">Solar Camera System</div>
                             <div class="portfolio-content">
@@ -2047,7 +2019,6 @@ footer::before {
                             </div>
                         </div>
 
-                        <!-- Project 7 -->
                         <div class="portfolio-card" data-category="Interior Fit-Out Works">
                             <div class="portfolio-image">Office Interior</div>
                             <div class="portfolio-content">
@@ -2065,7 +2036,6 @@ footer::before {
                             </div>
                         </div>
 
-                        <!-- Project 8 -->
                         <div class="portfolio-card" data-category="Building & Construction Works">
                             <div class="portfolio-image">Concrete Repair Works</div>
                             <div class="portfolio-content">
@@ -2083,7 +2053,6 @@ footer::before {
                             </div>
                         </div>
 
-                        <!-- Project 9 -->
                         <div class="portfolio-card" data-category="Plumbing & Sanitary Works">
                             <div class="portfolio-image">Hotel Plumbing System</div>
                             <div class="portfolio-content">
@@ -2101,7 +2070,6 @@ footer::before {
                             </div>
                         </div>
 
-                        <!-- Project 10 -->
                         <div class="portfolio-card" data-category="Specialized Projects">
                             <div class="portfolio-image">Polycarbonate Installation</div>
                             <div class="portfolio-content">
@@ -2119,7 +2087,6 @@ footer::before {
                             </div>
                         </div>
 
-                        <!-- Project 11 -->
                         <div class="portfolio-card" data-category="Building & Construction Works">
                             <div class="portfolio-image">Roof Flashing System</div>
                             <div class="portfolio-content">
@@ -2137,7 +2104,6 @@ footer::before {
                             </div>
                         </div>
 
-                        <!-- Project 12 -->
                         <div class="portfolio-card" data-category="Extra Low Voltage Systems">
                             <div class="portfolio-image">Multi-Tenant ELV Systems</div>
                             <div class="portfolio-content">
@@ -2168,7 +2134,6 @@ footer::before {
             </section>
         </div>
 
-        <!-- Contact Page -->
         <div id="contact" class="page">
             <section class="section">
                 <div class="container">
@@ -2179,7 +2144,6 @@ footer::before {
                     </p>
 
                     <div class="contact-grid">
-                        <!-- Contact Form -->
                         <div class="contact-form">
                             <h3>Send Us a Message</h3>
                             <div class="success-message" id="successMessage">
@@ -2220,7 +2184,6 @@ footer::before {
                             </form>
                         </div>
 
-                        <!-- Contact Information -->
                         <div class="contact-info">
                             <h3>Contact Information</h3>
                             <div class="contact-details">
@@ -2299,7 +2262,6 @@ footer::before {
         </div>
     </main>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-container">
             <div class="footer-section">
@@ -2504,5 +2466,23 @@ footer::before {
             }
         });
     </script>
+<script>const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+// Load saved preference or default to light
+const currentTheme = localStorage.getItem('theme') || 'light-mode';
+body.classList.add(currentTheme);
+
+themeToggle.onclick = function() {
+  if (body.classList.contains('dark-mode')) {
+    body.classList.remove('dark-mode');
+    body.classList.add('light-mode');
+    localStorage.setItem('theme', 'light-mode');
+  } else {
+    body.classList.remove('light-mode');
+    body.classList.add('dark-mode');
+    localStorage.setItem('theme', 'dark-mode');
+  }
+};</script>
 </body>
 </html>
